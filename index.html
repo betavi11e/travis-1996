@@ -1,59 +1,96 @@
-<HTML>
-<HEAD><script data-postmsg>window.addEventListener("message",function(e){if(e.data==="back")history.back();else if(e.data==="forward")history.forward();else if(e.data==="reload")location.reload();});</script><script data-domain-set>try{document.domain="andrewleitch.com"}catch(e){}</script>
-<TITLE> T R A V I S </TITLE> 
-<style id="__travisRestyle">html,body{background-image:url('images/grass.gif');background-repeat:repeat;background-color:#9aa0cf;}a:link{color:#9999cc}a:visited{color:#9999cc}a:active{color:#ffffff}</style></HEAD>
-<BODY BACKGROUND="images/grass.gif" link="#9999cc" alink="#ffffff">
-<P><A HREF="author.html"><IMG ALIGN="Right" SRC="images/sky.gif" BORDER="0"></A>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-</P>
-<CENTER><table border=0>
-<tr>
-<td  align=center>
-<A HREF="statemnt.html"><IMG SRC="images/travis.gif" ALT="About Travis"></A>
-</td>
-</tr>
- 
-<tr>
-<td align=center>
-<A HREF = "docs/wetravis/wetravis1.html"><IMG SRC="images/wepool.gif" ALT="West Egg Travis"></A>
-</td>
-</tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travis — Netscape Navigator</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#1a1a2e;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Charcoal','Geneva','Lucida Grande',Tahoma,sans-serif}
+#win{background:#d3d4d7;border:1px solid #000;border-radius:6px 6px 3px 3px;box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 #9a9c9f,0 12px 38px rgba(0,0,0,0.6);overflow:hidden;display:flex;flex-direction:column}
+#titlebar{height:22px;display:flex;align-items:center;gap:8px;padding:0 8px;background:repeating-linear-gradient(to bottom,#e6e6e6 0 1px,#a9adb2 1px 2px);border-bottom:1px solid #87898d;cursor:default;user-select:none;position:relative;flex-shrink:0}
+.sbox{width:12px;height:12px;border-radius:2px;flex-shrink:0;background:linear-gradient(#fbfbfb,#d3d4d7);box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 #87898d;border:1px solid #5b5d61}
+#title-text{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#d3d4d7;padding:0 10px;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#1d1d1f;white-space:nowrap}
+.globe-sm{width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#6fb1ff,#14387a 70%);box-shadow:inset 0 0 0 1px #0b2350;flex-shrink:0}
+.globe-lg{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8fd0ff,#1657b0 70%);border:1px solid #0b2350;box-shadow:inset 0 1px 1px rgba(255,255,255,0.6);flex-shrink:0}
+#toolbar{height:38px;display:flex;align-items:center;gap:6px;padding:0 8px;background:linear-gradient(#ededed,#d7d8db);border-bottom:1px solid #b6b8bc;flex-shrink:0}
+.btn{background:linear-gradient(#fbfbfb,#d3d4d7);box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 #87898d;border:1px solid #5b5d61;border-radius:5px;height:26px;min-width:44px;padding:0 9px;display:inline-flex;align-items:center;gap:5px;font-family:inherit;font-size:11px;font-weight:700;color:#1d1d1f;cursor:pointer}
+#locbar{height:26px;display:flex;align-items:center;gap:8px;padding:0 10px;background:#d3d4d7;border-bottom:1px solid #b6b8bc;flex-shrink:0}
+#locbar span{font-size:11px;font-weight:700;color:#4a4c50;flex-shrink:0}
+#loctext{flex:1;height:16px;line-height:16px;background:#fff;box-shadow:inset 1px 1px 0 #9a9c9f,inset -1px -1px 0 #fff;border:1px solid #87898d;padding:0 6px;font-size:11px;color:#1d1d1f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:inherit}
+#content{flex:1;border:none;display:block;background:#fff}
+#statusbar{height:22px;display:flex;align-items:center;gap:8px;padding:0 10px;background:linear-gradient(#ededed,#d3d4d7);border-top:1px solid #b6b8bc;font-size:11px;color:#3a3c40;flex-shrink:0}
+#statusbar .r{margin-left:auto;letter-spacing:0.3px;color:#6a6c70}
+</style>
+</head>
+<body>
+<div id="win">
+  <div id="titlebar">
+    <div class="sbox" onclick="window.close()" title="Close" style="cursor:pointer"></div>
+    <div style="flex:1"></div>
+    <div id="title-text"><div class="globe-sm"></div>Travis — Netscape Navigator</div>
+    <div style="display:flex;gap:6px"><div class="sbox"></div><div class="sbox"></div></div>
+  </div>
+  <div id="toolbar">
+    <button class="btn" onclick="nav('back')">&#9664; Back</button>
+    <button class="btn" onclick="nav('forward')">&#9654; Forward</button>
+    <button class="btn" onclick="nav('reload')">Reload</button>
+    <button class="btn" onclick="nav('home')">Home</button>
+    <div style="flex:1"></div>
+    <div class="globe-lg"></div>
+  </div>
+  <div id="locbar">
+    <span>Location:</span>
+    <div id="loctext">file:///Travis/home.html</div>
+  </div>
+  <iframe id="content" src="home.html" title="Travis" loading="eager"
+    onload="updateLoc(this)"></iframe>
+  <div id="statusbar">
+    <span>&#128274;</span><span>Document: Done.</span>
+    <span class="r">Netscape</span>
+  </div>
+</div>
+<script>
+var frame = document.getElementById('content');
+var loctext = document.getElementById('loctext');
+var HOME = 'home.html';
 
-<tr>
-<td  align=center>
-<A HREF="docs/shtravis/shtravis1.html"><IMG SRC="images/shgrass.gif" ALT="Sweet Home Travis"></A>
-</td>
-</tr>
+function updateLoc(f) {
+  try {
+    var href = f.contentWindow.location.href;
+    var after = href.split('/travis.andrewleitch.com/')[1] || href.split('/home.html')[0].split('/').pop() + '/home.html';
+    loctext.textContent = 'file:///Travis/' + (href.split('/travis.andrewleitch.com/')[1] || 'home.html');
+  } catch(e) {}
+}
 
-<tr>
-<td  align=center> 
-<A HREF="docs/nttravis/nttravis1.html"><IMG SRC="images/ntmud.gif" ALT="South Alligator Travis"></A>
-</td>
-</tr>
-</table></CENTER>
-<BR>
-<BR>
-<BR>  
-</P>
-<p>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-</BODY></HTML>
+function nav(cmd) {
+  if (cmd === 'home') { frame.src = HOME; return; }
+  frame.contentWindow.postMessage(cmd, '*');
+}
+
+// Auto-scale to viewport
+function scale() {
+  var pad = 32;
+  var sw = window.innerWidth - pad;
+  var sh = window.innerHeight - pad;
+  var CONTENT_W = 940;
+  var CONTENT_H = 740;
+  var CHROME_H = 22 + 38 + 26 + 22;
+  var winW = CONTENT_W;
+  var winH = CONTENT_H + CHROME_H;
+  var s = Math.min(1, sw / winW, sh / winH);
+  var w = document.getElementById('win');
+  w.style.width = CONTENT_W + 'px';
+  frame.style.height = CONTENT_H + 'px';
+  w.style.transform = 'scale(' + s + ')';
+  w.style.transformOrigin = 'center center';
+}
+scale();
+window.addEventListener('resize', scale);
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') window.history.back();
+});
+</script>
+</body>
+</html>
